@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1jbmifa2qn8a"
-path="res://.godot/imported/pentagram.png-a9f61ea08c096fbcb36c6ce7c6e32fef.ctex"
+uid="uid://04ciftdv6770"
+path="res://.godot/imported/VertexHighlight.png-33113948a5ecfe79ce34393ea7913ca2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/pentagram.png"
-dest_files=["res://.godot/imported/pentagram.png-a9f61ea08c096fbcb36c6ce7c6e32fef.ctex"]
+source_file="res://Sprites/VertexHighlight.png"
+dest_files=["res://.godot/imported/VertexHighlight.png-33113948a5ecfe79ce34393ea7913ca2.ctex"]
 
 [params]
 
