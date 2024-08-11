@@ -20,9 +20,9 @@ func equals(face: Face):
 	else:
 		return false
 	
-func _init(value: int, effects: Array):
-	self.value = value
-	for e in effects:
+func _init(values: int, effectss: Array):
+	self.value = values
+	for e in effectss:
 		self.effects.append(EFFECTS.e)
 	self.eCount = self.effects.size()
 

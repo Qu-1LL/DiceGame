@@ -5,11 +5,13 @@ class_name Dice
 var faceCount: int
 var faces: Array
 var diceName: String
+var health: int
 
-func _init(faceCount: int, faces: Array):
-	self.faceCount = faceCount
-	self.faces = faces
+func _init(faceCounts: int, facess: Array, hp: int):
+	self.faceCount = faceCounts
+	self.faces = facess
 	self.diceName = "My_Dice"
+	self.health = hp
 	
 func _ready():
 	pass
@@ -26,3 +28,6 @@ func removeFace(face: Face):
 	for f in faces:
 		if (face.equals(f)):
 			faces.remove_at(faces.find(f))
+			
+func roll():
+	return faces[randi() % faceCount]

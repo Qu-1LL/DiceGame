@@ -6,6 +6,6 @@ class_name Effect
 var type: String
 var instant: bool
 	
-func _init(name: String, instant: bool):
-	self.effectName = name
-	self.instant = instant
+func _init(eName: String, instants: bool):
+	self.effectName = eName
+	self.instant = instants
