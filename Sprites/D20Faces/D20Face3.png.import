@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3ao8t8kqqin6"
-path="res://.godot/imported/WaterAnim.png-78d2877b29b98393764f54b1d6899929.ctex"
+uid="uid://dsuaj021t6tr4"
+path="res://.godot/imported/D20Face3.png-76271f314b318cad7332d7c89f705a46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FullSizeSymbols/WaterAnim.png"
-dest_files=["res://.godot/imported/WaterAnim.png-78d2877b29b98393764f54b1d6899929.ctex"]
+source_file="res://Sprites/D20Faces/D20Face3.png"
+dest_files=["res://.godot/imported/D20Face3.png-76271f314b318cad7332d7c89f705a46.ctex"]
 
 [params]
 

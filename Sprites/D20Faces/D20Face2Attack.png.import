@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btedfyr53pkcm"
-path="res://.godot/imported/FireAnim.png-bbbde73b605b7bd835254228ab83d7bb.ctex"
+uid="uid://defndqy3f47gq"
+path="res://.godot/imported/D20Face2Attack.png-8f4f2eaec27c3f086cab972fec83336f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FullSizeSymbols/FireAnim.png"
-dest_files=["res://.godot/imported/FireAnim.png-bbbde73b605b7bd835254228ab83d7bb.ctex"]
+source_file="res://Sprites/D20Faces/D20Face2Attack.png"
+dest_files=["res://.godot/imported/D20Face2Attack.png-8f4f2eaec27c3f086cab972fec83336f.ctex"]
 
 [params]
 

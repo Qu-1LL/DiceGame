@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl0qdiksieqes"
-path="res://.godot/imported/D20Face1.png-e54ea40df5d596916eea5adfed235959.ctex"
+uid="uid://eh5gehw6xx03"
+path="res://.godot/imported/D20Face3Attack.png-9c3c7f97ce0b563e3547ef40ae11a56f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://D20Faces/D20Face1.png"
-dest_files=["res://.godot/imported/D20Face1.png-e54ea40df5d596916eea5adfed235959.ctex"]
+source_file="res://Sprites/D20Faces/D20Face3Attack.png"
+dest_files=["res://.godot/imported/D20Face3Attack.png-9c3c7f97ce0b563e3547ef40ae11a56f.ctex"]
 
 [params]
 

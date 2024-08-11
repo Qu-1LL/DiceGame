@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chwn4dq65bop6"
-path="res://.godot/imported/D20Face2Fire.png-c8b71bb4b3ac91dcdf25f30a4089b06c.ctex"
+uid="uid://d3ao8t8kqqin6"
+path="res://.godot/imported/WaterAnim.png-e342eb976a3fe1f9c6ab56a746b417e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://D20Faces/D20Face2Fire.png"
-dest_files=["res://.godot/imported/D20Face2Fire.png-c8b71bb4b3ac91dcdf25f30a4089b06c.ctex"]
+source_file="res://Sprites/FullSizeSymbols/WaterAnim.png"
+dest_files=["res://.godot/imported/WaterAnim.png-e342eb976a3fe1f9c6ab56a746b417e8.ctex"]
 
 [params]
 
