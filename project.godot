@@ -12,7 +12,6 @@ config_version=5
 
 config/name="DiceGameV1.0"
 <<<<<<< Updated upstream
-run/main_scene="res://Scenes/MainMenu.tscn"
 =======
 run/main_scene="res://node_2d.tscn"
 >>>>>>> Stashed changes
