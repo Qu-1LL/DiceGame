@@ -1,11 +1,11 @@
 extends Node
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+class_name Effect
+	
+var type: String
+var instant: bool
+	
+func _init(name: String, instant: bool):
+	self.effectName = name
+	self.instant = instant
