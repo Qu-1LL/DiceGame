@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://04ciftdv6770"
-path="res://.godot/imported/VertexHighlight.png-33113948a5ecfe79ce34393ea7913ca2.ctex"
+uid="uid://bboiajph2jjm"
+path="res://.godot/imported/Block.png-bce8c7dac09c3c1cff5a31e522455aa5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/VertexHighlight.png"
-dest_files=["res://.godot/imported/VertexHighlight.png-33113948a5ecfe79ce34393ea7913ca2.ctex"]
+source_file="res://Sprites/D6/Block.png"
+dest_files=["res://.godot/imported/Block.png-bce8c7dac09c3c1cff5a31e522455aa5.ctex"]
 
 [params]
 

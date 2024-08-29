@@ -1,114 +1,113 @@
 [gd_scene load_steps=4 format=3 uid="uid://cn7t1lrd8cxeu"]
 
-[ext_resource type="Texture2D" uid="uid://d1jbmifa2qn8a" path="res://Sprites/pentagram.png" id="1_ctt0w"]
-[ext_resource type="Texture2D" uid="uid://4hq5sdkioo1a" path="res://Sprites/Vertex.png" id="2_bvko7"]
-[ext_resource type="Texture2D" uid="uid://04ciftdv6770" path="res://Sprites/VertexHighlight.png" id="3_edbxi"]
+[ext_resource type="Texture2D" uid="uid://d1jbmifa2qn8a" path="res://Sprites/BoardAssets/pentagram.png" id="1_ctt0w"]
+[ext_resource type="Texture2D" uid="uid://4hq5sdkioo1a" path="res://Sprites/BoardAssets/Vertex.png" id="2_bvko7"]
+[ext_resource type="Texture2D" uid="uid://04ciftdv6770" path="res://Sprites/BoardAssets/VertexHighlight.png" id="3_edbxi"]
 
-[node name="Node2D" type="Node2D"]
-position = Vector2(186, 8)
-scale = Vector2(2, 2)
+[node name="Board Controlls" type="Node2D"]
+position = Vector2(735, -25)
 
 [node name="Pentagram" type="Sprite2D" parent="."]
-position = Vector2(516, 317.5)
-scale = Vector2(2, 2)
+position = Vector2(-158, 340)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_ctt0w")
 
 [node name="A1_Button" type="TextureButton" parent="."]
-offset_left = 482.5
-offset_top = 23.5
-offset_right = 514.5
-offset_bottom = 55.5
-scale = Vector2(2, 2)
+offset_left = -183.0
+offset_top = 115.0
+offset_right = -151.0
+offset_bottom = 147.0
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("2_bvko7")
 texture_hover = ExtResource("3_edbxi")
 metadata/_edit_use_anchors_ = true
 
 [node name="B1_Button" type="TextureButton" parent="."]
-offset_left = 230.5
-offset_top = 201.5
-offset_right = 262.5
-offset_bottom = 233.5
-scale = Vector2(2, 2)
+offset_left = -370.0
+offset_top = 253.0
+offset_right = -338.0
+offset_bottom = 285.0
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("2_bvko7")
 texture_hover = ExtResource("3_edbxi")
 metadata/_edit_use_anchors_ = true
 
 [node name="B2_Button" type="TextureButton" parent="."]
-offset_left = 425.5
-offset_top = 202.5
-offset_right = 457.5
-offset_bottom = 234.5
-scale = Vector2(2, 2)
+offset_left = -225.0
+offset_top = 255.0
+offset_right = -193.0
+offset_bottom = 287.0
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("2_bvko7")
 texture_hover = ExtResource("3_edbxi")
 metadata/_edit_use_anchors_ = true
 
 [node name="B3_Button" type="TextureButton" parent="."]
-offset_left = 545.5
-offset_top = 204.5
-offset_right = 577.5
-offset_bottom = 236.5
-scale = Vector2(2, 2)
+offset_left = -139.0
+offset_top = 252.0
+offset_right = -107.0
+offset_bottom = 284.0
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("2_bvko7")
 texture_hover = ExtResource("3_edbxi")
 metadata/_edit_use_anchors_ = true
 
 [node name="B4_Button" type="TextureButton" parent="."]
-offset_left = 736.0
-offset_top = 203.5
-offset_right = 768.0
-offset_bottom = 235.5
-scale = Vector2(2, 2)
+offset_left = 6.0
+offset_top = 254.0
+offset_right = 38.0
+offset_bottom = 286.0
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("2_bvko7")
 texture_hover = ExtResource("3_edbxi")
 metadata/_edit_use_anchors_ = true
 
 [node name="C1_Button" type="TextureButton" parent="."]
-offset_left = 389.0
-offset_top = 317.5
-offset_right = 421.0
-offset_bottom = 349.5
-scale = Vector2(2, 2)
+offset_left = -254.0
+offset_top = 338.0
+offset_right = -222.0
+offset_bottom = 370.0
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("2_bvko7")
 texture_hover = ExtResource("3_edbxi")
 metadata/_edit_use_anchors_ = true
 
 [node name="C2_Button" type="TextureButton" parent="."]
-offset_left = 578.5
-offset_top = 315.0
-offset_right = 610.5
-offset_bottom = 347.0
-scale = Vector2(2, 2)
+offset_left = -108.0
+offset_top = 338.0
+offset_right = -76.0
+offset_bottom = 370.0
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("2_bvko7")
 texture_hover = ExtResource("3_edbxi")
 metadata/_edit_use_anchors_ = true
 
 [node name="D1_Button" type="TextureButton" parent="."]
-offset_left = 485.0
-offset_top = 387.0
-offset_right = 517.0
-offset_bottom = 419.0
-scale = Vector2(2, 2)
+offset_left = -184.0
+offset_top = 388.0
+offset_right = -152.0
+offset_bottom = 420.0
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("2_bvko7")
 texture_hover = ExtResource("3_edbxi")
 metadata/_edit_use_anchors_ = true
 
 [node name="E1_Button" type="TextureButton" parent="."]
-offset_left = 324.0
-offset_top = 500.5
-offset_right = 356.0
-offset_bottom = 532.5
-scale = Vector2(2, 2)
+offset_left = -302.0
+offset_top = 481.0
+offset_right = -270.0
+offset_bottom = 513.0
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("2_bvko7")
 texture_hover = ExtResource("3_edbxi")
 metadata/_edit_use_anchors_ = true
 
 [node name="E2_Button" type="TextureButton" parent="."]
-offset_left = 644.0
-offset_top = 501.5
-offset_right = 676.0
-offset_bottom = 533.5
-scale = Vector2(2, 2)
+offset_left = -64.0
+offset_top = 479.0
+offset_right = -32.0
+offset_bottom = 511.0
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("2_bvko7")
 texture_hover = ExtResource("3_edbxi")
 metadata/_edit_use_anchors_ = true

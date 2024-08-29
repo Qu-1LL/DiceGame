@@ -13,20 +13,21 @@ var EFFECTS = {
 var value: int
 var effects: Array = []
 var eCount: int
+	
+func _init(value: int, effect: Array):
+	self.value = value
+	for e in effect:
+		self.effects.append(EFFECTS.e)
+	self.eCount = self.effects.size()
 
 func equals(face: Face):
 	if(self.value == face.value and self.effect.type == face.effect.type):
 		return true
 	else:
 		return false
-	
-func _init(values: int, effectss: Array):
-	self.value = values
-	for e in effectss:
-		self.effects.append(EFFECTS.e)
-	self.eCount = self.effects.size()
-
-func _ready():
-	pass
-func _process(delta):
-	pass
+		
+func getData() -> void:
+	var face_data = {
+		'effect' : self.effect,
+		'value' : self.value
+	}
