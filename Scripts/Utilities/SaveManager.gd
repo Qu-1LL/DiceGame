@@ -10,7 +10,8 @@ func firstTimeLoad():
 	if FileAccess.file_exists(save_path):
 		print('Player Data Exists')
 	else:
-		var start_data = constants.START_DATA
+		var startDataGenerator = StarterDataGenerator.new()
+		var start_data = startDataGenerator.generate()
 		print('Generating New Player Data...')
 		var file = FileAccess.open(save_path, FileAccess.WRITE)
 		file.store_string(json.stringify(start_data))
@@ -19,11 +20,9 @@ func firstTimeLoad():
 
 func saveData(data):
 	if FileAccess.file_exists(save_path):
-		verifyData(data)
 		var file = FileAccess.open(save_path, FileAccess.WRITE)
 		file.store_string(json.stringify(data))
 		file.close()
-		file = null
 	else:
 		print('Save file missing.')
 		
@@ -31,20 +30,20 @@ func loadData():
 	if FileAccess.file_exists(save_path):
 		var file = FileAccess.open(save_path, FileAccess.READ)
 		var content = json.parse_string(file.get_as_text())
-		verifyData(content)
+		verifyAndSaveData(content)
 		return content
 	else:
 		print('Save file missing.')
 
-func verifyData(data) -> Dictionary:
+func verifyAndSaveData(data):
 	print("Verifying Data...")
-	var start_data = constants.START_DATA
+	var start_data = constants.START_DATA_FORMAT
 	var error = 0
 	for key in start_data.keys():
-		if key in data:
+		if key in start_data:
 			pass
 		else:
-			print(key, "is missing from the main player dataset. Adding it back now.")
+			print(key, " is missing from the main player dataset. Adding it back now.")
 			data[key] = start_data[key]
 			error += 1
 	if error > 0:
@@ -52,5 +51,5 @@ func verifyData(data) -> Dictionary:
 	else:
 		print("No errors detected")	
 		
-	return data
+	saveData(data)
 			

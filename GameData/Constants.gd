@@ -5,7 +5,7 @@ var MIN_FACES = 4
 var MAX_DICE = 20
 var MIN_DICE = 0
 
-var START_DATA = {
+var START_DATA_FORMAT = {
 			'currency' : 0,
 			'inventory' : {},
 			'statistics' : 
@@ -17,7 +17,7 @@ var START_DATA = {
 			'dice' : 
 				[
 					{
-						'name' : 'Dice1',
+						'name' : 'Die1',
 						'faceCount' : 20,
 						'usable' : true,
 						'faces' : 
@@ -106,7 +106,7 @@ var START_DATA = {
 						
 					},
 					{
-						'name' : 'Dice2',
+						'name' : 'Die2',
 						'faceCount' : 20,
 						'usable' : true,
 						'faces' : 
@@ -195,7 +195,7 @@ var START_DATA = {
 						
 					},
 					{
-						'name' : 'Dice3',
+						'name' : 'Die3',
 						'faceCount' : 20,
 						'usable' : true,
 						'faces' : 
@@ -284,7 +284,7 @@ var START_DATA = {
 						
 					},
 					{
-						'name' : 'Dice4',
+						'name' : 'Die4',
 						'faceCount' : 20,
 						'usable' : true,
 						'faces' : 
