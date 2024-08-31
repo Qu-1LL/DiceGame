@@ -1,6 +1,7 @@
 extends Node
 
 class_name IdGenerator
+
 func truncateString(string : String, length : int):
 	if len(string) < length:
 		print("Can't truncate a string smaller than the given length.")

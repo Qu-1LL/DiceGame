@@ -31,5 +31,6 @@ func getData() -> Dictionary:
 	var face_data = {
 		'effect' : self.effect,
 		'value' : self.value
+		
 	}
 	return face_data
