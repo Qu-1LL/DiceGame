@@ -5,6 +5,8 @@ var MIN_FACES = 4
 var MAX_DICE = 20
 var MIN_DICE = 0
 
+var FACE_COUNTS = [6, 20]
+
 var START_DATA_FORMAT = {
 			'currency' : 0,
 			'inventory' : {},

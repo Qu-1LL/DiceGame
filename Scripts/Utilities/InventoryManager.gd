@@ -1,6 +1,6 @@
 extends Node
 
-class_name Inventory
+class_name InventoryManager
 
 var saveManager = SaveManager.new()
 var player_data = saveManager.loadData()
