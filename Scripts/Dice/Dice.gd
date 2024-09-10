@@ -25,9 +25,6 @@ func removeFace(face: Face) -> void:
 	for f in self.faces:
 		if (face.equals(f)):
 			self.faces.remove_at(self.faces.find(f))
-			
-func setName(name:String) -> void:
-	self.diceName = name
 	
 func getData() -> Dictionary:
 	var dice_data  = {

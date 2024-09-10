@@ -22,3 +22,11 @@ func generateGuid() -> String:
 	
 	var id_string = time_part + "-" + random_number
 	return truncateString(id_string, 24)
+
+func generateDiceName() -> String:
+	var names = load('res://GameData/Name.gd').new()
+	var adjectiveList = names.first_words
+	var descriptorList = names.second_words
+	var adjective = adjectiveList[randi() % adjectiveList.size()]
+	var descriptor = descriptorList[randi() % descriptorList.size()]
+	return (adjective + ' ' + descriptor)

@@ -6,7 +6,12 @@ var MAX_DICE = 20
 var MIN_DICE = 0
 
 var FACE_COUNTS = [6, 20]
-
+var DICE_FORMAT = {
+	'name' : '',
+	'faceCount' : 0,
+	'usable' : false,
+	'faces' : []
+}
 var START_DATA_FORMAT = {
 			'currency' : 0,
 			'inventory' : {},

@@ -1,6 +1,5 @@
 extends Control
 var saveManager = SaveManager.new()
-var inventoryManager = InventoryManager.new()
 
 func _ready() -> void:
 	pass
