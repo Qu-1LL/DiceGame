@@ -29,7 +29,7 @@ func diceToInventory(dieId : String, faceId : String):
 				if face['id'] == faceId:
 					var duplicated_face = face.duplicate().erase('id')
 					player_inventory[faceId] = duplicated_face
-					face = null
+					deleteId(faceId)
 					saveManager.saveData(player_data)
 					return
 		print('Face: ', faceId, ' does not exist.')
@@ -73,14 +73,17 @@ func createDie(diceName:String, faceCount:int):
 	player_dice.append(diceData)
 	return false
 	
-func deleteDie(diceId:String):
-	for index in range(player_dice.size):
-		if player_dice[index]['id'] == diceId:
-			player_dice.remove(index)
-			print('Die successfully deleted.')
-			return
-	print('Die not found and cannot be deleted.')
-						
+func deleteId(Id:String):
+	if Id in player_inventory:
+		player_inventory.erase(Id)
+		print('Face successfully deleted.')
+	else:
+		for index in range(player_dice.size):
+			if player_dice[index]['id'] == Id:
+				player_dice.remove(index)
+				print('Die successfully deleted.')
+				return
+				
 func idFromName(diceName:String):
 	for die in player_dice:
 		if die['name'] == diceName:
@@ -99,16 +102,23 @@ func dataFromId(Id:String): #searches
 			if face['id'] == Id:
 				return face
 	print('Id does not exist')
-	
+
+
 func importCreateDie(dieId:String, faceCount:int): #Creates a die with higher face count from an existing die.
 	var dice_data = dataFromId(dieId)
+	var idGenerator = IdGenerator.new()
 	if dice_data['faceCount'] > faceCount:
 		return true
-		
 	var dice_data_dupe = dice_data.duplicate()
+	dice_data = null
+	deleteId(dieId)
 	dice_data_dupe['usable'] = false
-	deleteDie(dieId)
-
+	dice_data_dupe['faceCount'] = faceCount
+	dice_data_dupe['id'] = idGenerator.generateGuid()
+	player_dice.append(dice_data_dupe)
+	saveManager.saveData(player_data)
+	return false 
+	
 func getFaceInventory() -> Dictionary:
 	return player_inventory
 
