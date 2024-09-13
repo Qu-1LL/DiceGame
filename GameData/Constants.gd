@@ -1,7 +1,7 @@
 extends Node
 
-var MAX_FACES = 20
-var MIN_FACES = 4
+var MAX_FACES = 100
+var MIN_FACES = 0
 var MAX_DICE = 20
 var MIN_DICE = 0
 

@@ -13,14 +13,26 @@ var player_dice = player_data['dice']
 var constants = load('res://GameData/Constants.gd').new()
 
 
-func generateFace(face : Dictionary):
+func generateFace(face : Dictionary): #gives face data an id and puts it in the inventory
 	var idGenerator = IdGenerator.new()
 	var faceId  = idGenerator.generateGuid()
 	player_inventory[faceId] = face
 	idGenerator = null
 	saveManager.saveData(player_data)
 	
-func dataFromId(Id:String): #Checks if an Id exists and returns its assoicated data.
+func deleteFace(faceId:String): #deletes face and returns where it was deleted. if it was a dice it returns all the dice data
+	if faceId in player_inventory:
+		player_inventory.erase(faceId)
+		return 'inventory'
+	else:
+		for dieId in player_dice:
+			if faceId in player_dice[dieId]['faces']:
+				var dice_data_copy = player_dice[dieId].duplicate(true)
+				player_dice[dieId]['faces'].erase(faceId)
+				return {dieId : dice_data_copy}
+		print('Id does not exist. (deleteFace)')
+		
+func dataFromId(Id:String): #checks if an Id exists and returns its assoicated data.
 	if Id in player_inventory:
 		return player_inventory[Id]
 	elif Id in player_dice:
@@ -58,36 +70,55 @@ func verifyDie(dieId:String) -> bool: #returns true if the dice has an issue.
 		print('Dice with Id:', dieId, ' has a face count greater than allowed on dice.')
 		#error message trigger goes here
 		return true
-	elif dice_data['faces'].count < dice_faceCount:
+	if dice_data['faces'].count < dice_faceCount:
 		dice_data['usable'] = false
-		
+	elif dice_data['faces'].count == dice_faceCount:
+		dice_data['usable'] = true
 	return false
 			
 func moveFaceTo(dieId : String, faceId : String, where: String): #used to move a face to a die or the inventory.
-	var face_data_copy = dataFromId(faceId).duplicate(true)
+	var face_data_copy = dataFromId(faceId).duplicate(true) #deep copy
 	var dice_data_copy = dataFromId(dieId).duplicate(true)
+	var from = deleteFace(faceId) 
+	
 	if where == 'inventory':
-		player_dice['faces'].erase(faceId)
 		player_inventory[faceId] = face_data_copy
 	elif where == 'die':
-		player_inventory.erase(faceId)
 		player_dice[dieId]['faces'][faceId] = face_data_copy
 	else:
 		print('Invalid location input. (moveFaceTo)')
-		
 	if verifyDie(dieId):
 		print('Cannot save dice data because of issue above ^.')
 		print('Reverting to die\'s previous state.')
-		player_inventory[faceId] = face_data_copy
-		player_dice[dieId] = dice_data_copy
+		if from == 'inventory':
+			player_inventory[faceId] = face_data_copy
+		else:
+			player_dice[dieId] = dice_data_copy
+			player_dice.merge(from, true)
 		saveManager.saveData(player_data)
 	else:
 		saveManager.saveData(player_data)
 
-func changeFaceCount(dieId:String, faceCount:int):
-	if player_dice[dieId]['faceCount'] > faceCount:
-		if player_dice[dieId]['faces'].count > faceCount:
-			pass
+func changeFaceCount(dieId:String, faceCount:int): #changes face count sending excess faces to inventory
+	var dice_data = dataFromId(dieId)
+	var dice_data_copy = dice_data.duplicate(true)
+	
+	if dice_data[dieId]['faces'].count > faceCount: #moves excess faces on die if the face count change is smaller than the face count
+		var number_of_faces_to_move = dice_data[dieId]['faces'].count - faceCount
+		for faceId in dice_data['faces']:
+			if number_of_faces_to_move == 0:
+				break
+			else:
+				moveFaceTo(dieId, faceId, 'inventory')
+	
+	dice_data['faceCount'] = faceCount
+	if verifyDie(dieId):
+		print('Cannot save dice data because of issue above ^.')
+		print('Reverting to die\'s previous state.')
+		player_dice[dieId] = dice_data_copy
+		saveManager.saveData(player_data)
+	else:
+		saveManager.saveData(player_data)
 	
 func importCreateDie(dieId:String, faceCount:int): #Creates a die with higher face count from an existing die.
 	pass
