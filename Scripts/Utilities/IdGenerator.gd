@@ -13,16 +13,14 @@ func truncateString(string : String, length : int):
 		return output_string
 		
 func generateGuid() -> String:
-	var time_part = str(Time.get_unix_time_from_system())
+	var time_part = str(Time.get_unix_time_from_system()).replace(',', '')
 	var random_array = OS.get_entropy(8)
 	var random_number = ""
 	for numbers in random_array:
-		
 		random_number += str(numbers)
+	var id_string = truncateString(truncateString(time_part, 8) + random_number, 16)
+	return id_string
 	
-	var id_string = time_part + "-" + random_number
-	return truncateString(id_string, 24)
-
 func generateDiceName() -> String:
 	var names = load('res://GameData/Name.gd').new()
 	var adjectiveList = names.first_words

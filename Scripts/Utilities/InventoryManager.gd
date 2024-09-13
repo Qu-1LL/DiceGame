@@ -13,111 +13,34 @@ var player_dice = player_data['dice']
 var constants = load('res://GameData/Constants.gd').new()
 
 func generateFace(face : Dictionary):
-	var idGenerator = IdGenerator.new()
-	var id = idGenerator.generateGuid()
-	player_inventory[id] = face
-	idGenerator = null
-
+	pass
+	
 func deleteFace(faceId : String):
-	player_inventory[faceId].erase()
-	saveManager.saveData(player_data)
+	pass
 	
 func diceToInventory(dieId : String, faceId : String):
-	for die in player_dice:
-		if die['id'] == dieId:
-			for face in die:
-				if face['id'] == faceId:
-					var duplicated_face = face.duplicate().erase('id')
-					player_inventory[faceId] = duplicated_face
-					deleteId(faceId)
-					saveManager.saveData(player_data)
-					return
-		print('Face: ', faceId, ' does not exist.')
-	print('Dice: ', dieId, ' does not exist.')
- 
+	pass
+	
 func inventoryToDice(dieId : String, faceId : String):
-	if faceId in player_inventory:
-		var face_duplicate = player_inventory[faceId].duplicate()
-		face_duplicate['id'] = faceId
-		player_inventory[faceId].erase()
-		for die in player_dice:
-			if die['id'] == dieId:
-				die['faces'].append(face_duplicate)			
-				saveManager.saveData(player_data)
-				return
-		print("Dice: ", dieId, " does not exist.")
-		return
-	else:
-		print("Face: ", faceId, " is not in player's inventory.")
-		
-func isDuplicate(diceName:String) -> bool:
-	for die in player_dice:
-		if die['name'] == diceName:
-			return true
-	return false
+	pass 
+	
+func isDuplicate(diceName:String):
+	pass
 	
 func createDie(diceName:String, faceCount:int):
-	var idGenerator = IdGenerator.new()
-	var diceId = idGenerator.generateGuid()
-	var diceData = constants.DICE_FORMAT
-	
-	if diceName == "":
-		diceName = idGenerator.generateDiceName()
-	if isDuplicate(diceName):
-		print('Cannot create dice because a duplicate name exists.')
-		return true
-	
-	diceData['name'] = diceName
-	diceData['id'] = diceId
-	diceData['faceCount']  = faceCount
-	player_dice.append(diceData)
-	return false
-	
+	pass
 func deleteId(Id:String):
-	if Id in player_inventory:
-		player_inventory.erase(Id)
-		print('Face successfully deleted.')
-	else:
-		for index in range(player_dice.size):
-			if player_dice[index]['id'] == Id:
-				player_dice.remove(index)
-				print('Die successfully deleted.')
-				return
-				
+	pass
+	
 func idFromName(diceName:String):
-	for die in player_dice:
-		if die['name'] == diceName:
-			return die['id']
-	print('Die either doesn\'t exist or wrong name was inputted.')
+	pass
 
 func dataFromId(Id:String): #searches 
-	for face in player_inventory:
-		if face['id'] == Id:
-			return face
-	print('No faces in player inventory with inputted Id.')
-	for die in player_dice:
-		if die['id'] == Id:
-			return die
-		for face in die['faces']:
-			if face['id'] == Id:
-				return face
-	print('Id does not exist')
+	pass
 
 
 func importCreateDie(dieId:String, faceCount:int): #Creates a die with higher face count from an existing die.
-	var dice_data = dataFromId(dieId)
-	var idGenerator = IdGenerator.new()
-	if dice_data['faceCount'] > faceCount:
-		return true
-	var dice_data_dupe = dice_data.duplicate()
-	dice_data = null
-	deleteId(dieId)
-	dice_data_dupe['usable'] = false
-	dice_data_dupe['faceCount'] = faceCount
-	dice_data_dupe['id'] = idGenerator.generateGuid()
-	player_dice.append(dice_data_dupe)
-	saveManager.saveData(player_data)
-	return false 
+	pass
 	
 func getFaceInventory() -> Dictionary:
 	return player_inventory
