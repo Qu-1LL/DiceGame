@@ -2,12 +2,14 @@ extends Node
 
 class_name Dice
 
-func _init(diceName: String, faceCount: int, faces: Array, health: int) -> void:
-	self.faceCount = faceCount
-	self.faces = faces
-	self.diceName = diceName
-	self.health = health
-	self.usable = false if faceCount < len(faces) else true
+func _init(diceData:Dictionary) -> void:
+	self.faceCount = diceData['faceCount']
+	self.faces = []
+	for face in diceData['faces'].values():
+		self.faces.append(face)
+	self.diceName = diceData['name']
+	self.health = diceData['faceCount']
+	self.usable = diceData['usable']
 
 
 func addFace(face: Face) -> void:

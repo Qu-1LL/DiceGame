@@ -10,7 +10,7 @@ var DICE_FORMAT = {
 	'name' : '',
 	'faceCount' : 0,
 	'usable' : false,
-	'faces' : []
+	'faces' : {}
 }
 var START_DATA_FORMAT = {
 			'currency' : 0,

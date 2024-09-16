@@ -1,17 +1,15 @@
 extends Control
-var saveManager = SaveManager.new()
 
+var inventoryManager = InventoryManager.new()
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/GameMenu.tscn")
-
 
 func _on_test_button_pressed() -> void:
-	print('test button has been pressed')
-	
+	inventoryManager.createDie('', 20)
